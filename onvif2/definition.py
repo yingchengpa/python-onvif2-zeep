@@ -1,0 +1,21 @@
+SERVICES = {
+        # Name                              namespace                           wsdl file                      binding name
+        'devicemgmt': {'ns': 'http://www.onvif.org/ver10/device/wsdl',    'wsdl': './ver10/device/wsdl/devicemgmt.wsdl', 'binding' : 'DeviceBinding'},
+        'media'     : {'ns': 'http://www.onvif.org/ver10/media/wsdl',     'wsdl': './ver10/media/wsdl/media.wsdl',      'binding' : 'MediaBinding'},
+        'media2'    : {'ns': 'http://www.onvif.org/ver20/media/wsdl',     'wsdl': './ver20/media/wsdl/media.wsdl',      'binding' : 'Media2Binding'},
+        'ptz'       : {'ns': 'http://www.onvif.org/ver20/ptz/wsdl',       'wsdl': './ver20/ptz/wsdl/ptz.wsdl',        'binding' : 'PTZBinding'},
+        'imaging'   : {'ns': 'http://www.onvif.org/ver20/imaging/wsdl',   'wsdl': './ver20/imaging/wsdl/imaging.wsdl',    'binding' : 'ImagingBinding'},
+        'deviceio'  : {'ns': 'http://www.onvif.org/ver10/deviceIO/wsdl',  'wsdl': './ver20/deviceio.wsdl',   'binding' : 'DeviceIOBinding'},
+        'events'    : {'ns': 'http://www.onvif.org/ver10/events/wsdl',    'wsdl': './ver20/events/events.wsdl',     'binding' : 'EventBinding'},
+        'pullpoint' : {'ns': 'http://www.onvif.org/ver10/events/wsdl',    'wsdl': './ver20/events/events.wsdl',     'binding' : 'PullPointSubscriptionBinding'},
+        'analytics' : {'ns': 'http://www.onvif.org/ver20/analytics/wsdl', 'wsdl': './ver20/analytics/wsdl/analytics.wsdl',  'binding' : 'AnalyticsEngineBinding'},
+        'recording' : {'ns': 'http://www.onvif.org/ver10/recording/wsdl', 'wsdl': './ver20/recording.wsdl',  'binding' : 'RecordingBinding'},
+        'search'    : {'ns': 'http://www.onvif.org/ver10/search/wsdl',    'wsdl': './ver20/search.wsdl',     'binding' : 'SearchBinding'},
+        'replay'    : {'ns': 'http://www.onvif.org/ver10/replay/wsdl',    'wsdl': './ver20/replay.wsdl',     'binding' : 'ReplayBinding'},
+        'receiver'  : {'ns': 'http://www.onvif.org/ver10/receiver/wsdl',  'wsdl': './ver20/receiver.wsdl',   'binding' : 'ReceiverBinding'},
+        }
+
+#
+#NSMAP = { }
+#for name, item in SERVICES.items():
+#    NSMAP[item['ns']] = name
