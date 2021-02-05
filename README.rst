@@ -1,7 +1,7 @@
 python-onvif2-zeep
-============
+==============================
 
-ONVIF Client Implementation in Python
+ONVIF Client Implementation in Python base wsdl ver10/20
 
 Dependencies
 ------------
@@ -9,10 +9,8 @@ Dependencies
 
 Install python-onvif2-zeep
 
-Dependencies
 python-onvif-zeep ,see https://github.com/FalkTannhaeuser/python-onvif-zeep)
 
--------------------------
 **From Source**
 
 You should clone this repository and run setup.py::
@@ -46,9 +44,10 @@ download the wsdl folder,and put to the /home/onvif2
 
 are available.
 
-Get media2 from your camera ,
-~~~
+Get media2 from your camera 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
+
 	media2_service = self.mycam.create_media2_service()
 	
 	## get the streamUri
@@ -83,7 +82,7 @@ Get media2 from your camera ,
 
             print(dic)
 
-~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Get information from your camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
