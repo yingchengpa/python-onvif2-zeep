@@ -8,8 +8,8 @@ from argparse import ArgumentParser, REMAINDER
 
 from zeep.exceptions import LookupError as MethodNotFound
 from zeep.xsd import String as Text
-from onvif import ONVIFCamera, ONVIFService, ONVIFError
-from onvif.definition import SERVICES
+from onvif2 import ONVIFCamera, ONVIFService, ONVIFError
+from onvif2.definition import SERVICES
 import os.path
 
 SUPPORTED_SERVICES = SERVICES.keys()
