@@ -22,6 +22,7 @@ This document and the information contained herein is provided on an "AS IS" bas
   xmlns:wsrf-bf="http://docs.oasis-open.org/wsrf/bf-2"
   xmlns:wstop="http://docs.oasis-open.org/wsn/t-1"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:tt="http://www.onvif.org/ver10/schema"
   elementFormDefault="qualified"  attributeFormDefault="unqualified">
 
 <!-- ======================== Imports  ============================ -->
@@ -35,6 +36,9 @@ This document and the information contained herein is provided on an "AS IS" bas
   />
   <xsd:import namespace="http://docs.oasis-open.org/wsn/t-1"
               schemaLocation="./t-1.xsd" 
+  />
+  <xsd:import namespace="http://www.onvif.org/ver10/schema"
+              schemaLocation="./onvif.xsd" 
   />
   
 <!-- ===================== Misc. Helper Types ===================== -->
@@ -131,11 +135,12 @@ This document and the information contained herein is provided on an "AS IS" bas
       <xsd:element name="Message">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:any namespace="##any" processContents="lax"
-                     minOccurs="1" maxOccurs="1"/>
+            <xsd:element ref="tt:Message" 
+                     minOccurs="1" maxOccurs="1" />
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+        
     </xsd:sequence>
   </xsd:complexType>
   <xsd:element name="NotificationMessage"
