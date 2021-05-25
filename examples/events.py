@@ -11,4 +11,4 @@ if __name__ == '__main__':
     pullpoint = mycam.create_pullpoint_service()
     req = pullpoint.create_type('PullMessages')
     req.MessageLimit=100
-    print(pullpoint.PullMessages(req))
+    print(pullpoint.PullMessages({"Timeout":timedelta(seconds=2),"MessageLimit":10}))

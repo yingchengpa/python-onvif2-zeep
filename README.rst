@@ -133,6 +133,17 @@ exception if you set an invalid (or non-existent) parameter.
     time_params.UTCDateTime.Time.Second = 11
     mycam.devicemgmt.SetSystemDateAndTime(time_params)
 
+Use events
+~~~~~~~~~~~~~~~~~~
+    mycam = ONVIFCamera('192.168.1.10', 8899, 'admin', 'admin') #, no_cache=True)
+    event_service = mycam.create_events_service()
+    print(event_service.GetEventProperties())
+    
+    pullpoint = mycam.create_pullpoint_service()
+    req = pullpoint.create_type('PullMessages')
+    req.MessageLimit=100
+    print(pullpoint.PullMessages({"Timeout":timedelta(seconds=2),"MessageLimit":10}))
+
 Use other services
 ~~~~~~~~~~~~~~~~~~
 ONVIF protocol has defined many services.
