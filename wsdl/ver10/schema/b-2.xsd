@@ -51,11 +51,12 @@ This document and the information contained herein is provided on an "AS IS" bas
   </xsd:complexType>
 
   <xsd:complexType name="TopicExpressionType" mixed="true">
-    <xsd:sequence>
-      <xsd:any minOccurs="0" maxOccurs="1" processContents="lax" />
-    </xsd:sequence>
-    <xsd:attribute name="Dialect" type="xsd:anyURI" use="required" />
-    <xsd:anyAttribute/>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="Dialect" type="xsd:anyURI" use="required" />
+        <xsd:anyAttribute/>
+      </xsd:extension>
+    </xsd:simpleContent>
   </xsd:complexType>
 
   <xsd:complexType name="FilterType">
