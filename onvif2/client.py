@@ -237,7 +237,7 @@ class ONVIFCamera(object):
             rns = servic['Namespace']
             rxaddr = servic['XAddr']
             for name in SERVICES:
-                if rns.lower() in SERVICES[name]['ns'] or if rns in SERVICES[name]['ns']:
+                if rns.lower() in SERVICES[name]['ns'] or rns in SERVICES[name]['ns']:
                     self.xaddrs[rns] = rxaddr
 
         # capabilities = self.devicemgmt.GetCapabilities({'Category': 'All'})
