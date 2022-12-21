@@ -1,7 +1,7 @@
 python-onvif2-zeep
 ==============================
 
-[![Downloads](https://pepy.tech/badge/onvif2_zeep)](https://pepy.tech/project/onvif2_zeep)
+'Downloads <https://pepy.tech/badge/onvif2_zeep>'_
 
 ONVIF Client Implementation in Python base wsdl ver10/20
 
