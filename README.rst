@@ -1,9 +1,9 @@
 python-onvif2-zeep
 ==============================
 
-'Downloads <https://pepy.tech/badge/onvif2_zeep>'_
+'<https://pepy.tech/badge/onvif2_zeep>'_
 
-ONVIF Client Implementation in Python base wsdl ver10/20
+ONVIF Client Implementation in Python base wsdl ver10/20, support hevc(h.265) 
 
 Dependencies
 ------------
