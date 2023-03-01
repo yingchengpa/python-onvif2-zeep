@@ -231,25 +231,26 @@ class ONVIFCamera(object):
         # Get XAddr of services on the device
         self.xaddrs = { }
 
-        # from getservices to get the service wsdl
-        services = self.devicemgmt.GetServices({'IncludeCapability': 1})
-        for servic in services:
-            rns = servic['Namespace']
-            rxaddr = servic['XAddr']
-            for name in SERVICES:
-                if rns.lower() in SERVICES[name]['ns'] or rns in SERVICES[name]['ns']:
-                    self.xaddrs[rns] = rxaddr
-
-        # capabilities = self.devicemgmt.GetCapabilities({'Category': 'All'})
-        # for name in capabilities:
-        #     capability = capabilities[name]
-        #     print(name)
-        #     try:
-        #         if name.lower() in SERVICES and capability is not None:
-        #             ns = SERVICES[name.lower()]['ns']
-        #             self.xaddrs[ns] = capability['XAddr']
-        #     except Exception:
-        #         logger.exception('Unexpected service type')
+        try:
+            # from GetServices to get the service wsdl
+            services = self.devicemgmt.GetServices({'IncludeCapability': 1})
+            for servic in services:
+                rns = servic['Namespace']
+                rxaddr = servic['XAddr']
+                for name in SERVICES:
+                    if rns.lower() in SERVICES[name]['ns'] or rns in SERVICES[name]['ns']:
+                        self.xaddrs[rns] = rxaddr
+        except Exception:
+            # from GetCapabilities to get the service wsdl if GetServices is not supported
+            capabilities = self.devicemgmt.GetCapabilities({'Category': 'All'})
+            for name in capabilities:
+                capability = capabilities[name]
+                try:
+                    if name.lower() in SERVICES and capability is not None:
+                        ns = SERVICES[name.lower()]['ns']
+                        self.xaddrs[ns] = capability['XAddr']
+                except Exception:
+                    logger.exception('Unexpected service type')
 
         with self.services_lock:
             try:
